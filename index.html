@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Le Prince ALIA | Restaurant à Savalou</title>
+
+    <meta name="description"
+          content="Bienvenue au restaurant Le Prince ALIA à Savalou, Bénin. Découvrez une cuisine savoureuse dans un cadre agréable.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0d0d0d;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #d4a017;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #d4a017;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 60px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.68),
+                    rgba(0,0,0,0.78)
+                ),
+                url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1600&q=85")
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .tag {
+            color: #d4a017;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 12vw, 90px);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #d4a017;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #ddd;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #d4a017;
+            color: #111;
+        }
+
+        .btn-primary:hover {
+            background: #f0c44c;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #111;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 75px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title small {
+            color: #d4a017;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-top: 8px;
+        }
+
+        /* PRESENTATION */
+
+        .about {
+            background: #151515;
+        }
+
+        .about-grid {
+            display: grid;
+            gap: 35px;
+        }
+
+        .about-image {
+            min-height: 350px;
+            border-radius: 20px;
+
+            background:
+                url("https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=85")
+                center/cover;
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #bbb;
+            margin-bottom: 15px;
+        }
+
+        /* SPECIALITES */
+
+        .cards {
+            display: grid;
+            gap: 20px;
+        }
+
+        .card {
+            background: #171717;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid #292929;
+        }
+
+        .card-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card:nth-child(1) .card-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85");
+        }
+
+        .card:nth-child(2) .card-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85");
+        }
+
+        .card:nth-child(3) .card-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=85");
+        }
+
+        .card-content {
+            padding: 22px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 8px;
+        }
+
+        .card-content p {
+            color: #aaa;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #151515;
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact-box p {
+            color: #bbb;
+            margin: 15px 0 30px;
+        }
+
+        .location {
+            margin-top: 30px;
+            color: #d4a017;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px 20px;
+            text-align: center;
+            background: #080808;
+            color: #777;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* DESKTOP */
+
+        @media (min-width: 768px) {
+
+            nav {
+                padding: 25px 50px;
+            }
+
+            .nav-links {
+                display: flex;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+            }
+
+            .cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="logo">
+            LE PRINCE <span>ALIA</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#accueil">Accueil</a>
+            <a href="#restaurant">Le restaurant</a>
+            <a href="#specialites">Spécialités</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+
+    <!-- ACCUEIL -->
+
+    <header class="hero" id="accueil">
+
+        <div class="hero-content">
+
+            <div class="tag">
+                Restaurant • Savalou
+            </div>
+
+            <h1>
+                Le Prince <span>ALIA</span>
+            </h1>
+
+            <p>
+                Une expérience gourmande,
+                authentique et chaleureuse au cœur de Savalou.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#specialites" class="btn btn-primary">
+                    Découvrir nos spécialités
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Nous contacter
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- PRESENTATION -->
+
+    <section class="about" id="restaurant">
+
+        <div class="container">
+
+            <div class="section-title">
+                <small>Bienvenue</small>
+                <h2>Notre restaurant</h2>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-image"></div>
+
+                <div class="about-text">
+
+                    <h3>Bienvenue chez Le Prince ALIA</h3>
+
+                    <p>
+                        Découvrez un espace où la bonne cuisine
+                        rencontre une ambiance agréable et conviviale.
+                    </p>
+
+                    <p>
+                        Notre objectif est simple :
+                        vous offrir un moment agréable autour
+                        de plats savoureux.
+                    </p>
+
+                    <p>
+                        Que ce soit pour manger, se retrouver
+                        ou simplement profiter d'un bon moment,
+                        Le Prince ALIA vous accueille avec plaisir.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SPECIALITES -->
+
+    <section id="specialites">
+
+        <div class="container">
+
+            <div class="section-title">
+                <small>À découvrir</small>
+                <h2>Nos spécialités</h2>
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="card-image"></div>
+
+                    <div class="card-content">
+
+                        <h3>Plats savoureux</h3>
+
+                        <p>
+                            Des plats préparés avec soin
+                            pour satisfaire vos envies.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-image"></div>
+
+                    <div class="card-content">
+
+                        <h3>Cuisine authentique</h3>
+
+                        <p>
+                            Une cuisine généreuse
+                            inspirée des saveurs locales.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-image"></div>
+
+                    <div class="card-content">
+
+                        <h3>Moments gourmands</h3>
+
+                        <p>
+                            Un cadre idéal pour partager
+                            un bon moment autour d'un repas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <div class="section-title">
+                    <small>Contact</small>
+                    <h2>Venez nous découvrir</h2>
+                </div>
+
+                <p>
+                    Pour toute information ou demande,
+                    contactez directement Le Prince ALIA.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="tel:+22900000000"
+                       class="btn btn-primary">
+                        📞 Nous appeler
+                    </a>
+
+                </div>
+
+                <div class="location">
+                    📍 Savalou, Bénin
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 <strong>Le Prince ALIA</strong>.
+            Tous droits réservés.
+        </p>
+
+    </footer>
+
+</body>
+  </html>
