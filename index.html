@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Le Prince ALIA | Restaurant à Savalou</title>
+
+    <meta name="description"
+          content="Le Prince ALIA, restaurant à Savalou au Bénin, en face de l'Hôtel F&F. Découvrez nos plats, spaghetti, omelettes, couscous, café, boissons et sucreries du Bénin.">
+
+    <meta name="keywords"
+          content="Le Prince ALIA, restaurant Savalou, restaurant au Bénin, restaurant Savalou Bénin, spaghetti Savalou, couscous Savalou, omelette Savalou, café Savalou">
+
+    <meta name="author"
+          content="Le Prince ALIA">
+
+    <meta name="robots"
+          content="index, follow">
+
+    <meta property="og:title"
+          content="Le Prince ALIA | Restaurant à Savalou">
+
+    <meta property="og:description"
+          content="Restaurant Le Prince ALIA à Savalou, en face de l'Hôtel F&F.">
+
+    <meta property="og:type"
+          content="website">
+
+
+    <style>
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+
+            --violet: #8b5cf6;
+            --violet-dark: #6d28d9;
+            --violet-deep: #2e1065;
+            --violet-light: #c4b5fd;
+
+            --background: #09050f;
+            --surface: #12091c;
+            --surface-light: #1b1028;
+
+            --white: #ffffff;
+            --text: #f5f3ff;
+            --muted: #b9aec8;
+
+            --border: rgba(167, 139, 250, 0.20);
+
+            --shadow:
+                0 25px 70px rgba(0, 0, 0, 0.35);
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                var(--background);
+
+            color:
+                var(--text);
+
+            line-height:
+                1.6;
+
+            overflow-x:
+                hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+        }
+
+
+        /* =====================================================
+           ANIMATIONS
+        ===================================================== */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0% {
+                box-shadow:
+                    0 0 0 0
+                    rgba(37, 211, 102, 0.6);
+            }
+
+            70% {
+                box-shadow:
+                    0 0 0 15px
+                    rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow:
+                    0 0 0 0
+                    rgba(37, 211, 102, 0);
+            }
+        }
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(35px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.visible {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        nav {
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            padding: 20px;
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            z-index: 100;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(9,5,15,0.9),
+                    transparent
+                );
+        }
+
+        .logo {
+
+            font-size: 21px;
+
+            font-weight: 900;
+
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+
+            color:
+                var(--violet-light);
+        }
+
+        .nav-links {
+
+            display: none;
+
+            gap: 28px;
+        }
+
+        .nav-links a {
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+
+            color:
+                var(--violet-light);
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding:
+                110px 20px 70px;
+
+            position: relative;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(20,5,35,0.93),
+                    rgba(46,16,101,0.68)
+                ),
+
+                url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85")
+                center / cover;
+        }
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    rgba(139,92,246,0.28),
+                    transparent 55%
+                );
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 850px;
+
+            animation:
+                fadeUp 1s ease;
+        }
+
+        .tag {
+
+            display: inline-block;
+
+            padding:
+                8px 16px;
+
+            border:
+                1px solid
+                rgba(196,181,253,0.35);
+
+            border-radius: 30px;
+
+            color:
+                var(--violet-light);
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom: 22px;
+
+            background:
+                rgba(91,33,182,0.18);
+
+            backdrop-filter:
+                blur(8px);
+        }
+
+        .hero h1 {
+
+            font-size:
+                clamp(48px, 13vw, 105px);
+
+            line-height: 0.95;
+
+            font-weight: 900;
+
+            margin-bottom: 25px;
+
+            letter-spacing: -3px;
+        }
+
+        .hero h1 span {
+
+            display: block;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #c4b5fd,
+                    #8b5cf6,
+                    #7c3aed
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .hero p {
+
+            max-width: 650px;
+
+            margin:
+                auto auto 22px;
+
+            color:
+                #ddd4e8;
+
+            font-size: 17px;
+        }
+
+        .hero-location {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color:
+                var(--violet-light);
+
+            font-weight: 800;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =====================================================
+           BOUTONS
+        ===================================================== */
+
+        .buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 13px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 50px;
+
+            padding:
+                13px 23px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            font-weight: 800;
+
+            transition: 0.3s;
+
+            cursor: pointer;
+        }
+
+        .btn-primary {
+
+            color: white;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #8b5cf6,
+                    #6d28d9
+                );
+
+            box-shadow:
+                0 10px 35px
+                rgba(124,58,237,0.35);
+        }
+
+        .btn-primary:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 15px 45px
+                rgba(124,58,237,0.55);
+        }
+
+        .btn-secondary {
+
+            color: white;
+
+            border:
+                1px solid
+                rgba(196,181,253,0.45);
+
+            background:
+                rgba(255,255,255,0.04);
+        }
+
+        .btn-secondary:hover {
+
+            background:
+                rgba(139,92,246,0.18);
+
+            transform:
+                translateY(-4px);
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ===================================================== */
+
+        section {
+
+            padding:
+                90px 20px;
+        }
+
+        .container {
+
+            max-width:
+                1120px;
+
+            margin: auto;
+        }
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 50px;
+        }
+
+        .section-title small {
+
+            color:
+                var(--violet-light);
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            letter-spacing: 3px;
+
+            text-transform:
+                uppercase;
+        }
+
+        .section-title h2 {
+
+            font-size:
+                clamp(32px, 6vw, 48px);
+
+            line-height: 1.1;
+
+            margin-top: 10px;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about {
+
+            background:
+
+                linear-gradient(
+                    180deg,
+                    #100719,
+                    #0d0613
+                );
+        }
+
+        .about-grid {
+
+            display: grid;
+
+            gap: 40px;
+        }
+
+        .about-image {
+
+            min-height: 390px;
+
+            border-radius: 25px;
+
+            background:
+
+                linear-gradient(
+                    rgba(46,16,101,0.25),
+                    rgba(0,0,0,0.2)
+                ),
+
+                url("https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=85")
+                center / cover;
+
+            box-shadow:
+                var(--shadow);
+        }
+
+        .about-text h3 {
+
+            font-size: 31px;
+
+            margin-bottom: 18px;
+        }
+
+        .about-text h3 span {
+
+            color:
+                var(--violet-light);
+        }
+
+        .about-text p {
+
+            color:
+                var(--muted);
+
+            margin-bottom: 17px;
+        }
+
+
+        /* =====================================================
+           MENU
+        ===================================================== */
+
+        .menu {
+
+            background:
+                #09050f;
+        }
+
+        .menu-grid {
+
+            display: grid;
+
+            gap: 20px;
+        }
+
+        .menu-item {
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #1a0d28,
+                    #100719
+                );
+
+            border:
+                1px solid
+                var(--border);
+
+            transition: 0.3s;
+        }
+
+        .menu-item:hover {
+
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(167,139,250,0.55);
+
+            box-shadow:
+                0 15px 45px
+                rgba(91,33,182,0.2);
+        }
+
+        .menu-icon {
+
+            font-size: 35px;
+
+            margin-bottom: 10px;
+        }
+
+        .menu-item h3 {
+
+            font-size: 21px;
+
+            margin-bottom: 6px;
+        }
+
+        .menu-item p {
+
+            color:
+                var(--muted);
+        }
+
+
+        /* =====================================================
+           GALERIE
+        ===================================================== */
+
+        .gallery {
+
+            background:
+                #100719;
+        }
+
+        .gallery-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+        }
+
+        .gallery-item {
+
+            height: 220px;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            position: relative;
+
+            background:
+                #1b1028;
+        }
+
+        .gallery-item img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+
+            transform:
+                scale(1.08);
+        }
+
+
+        /* =====================================================
+           AVIS
+        ===================================================== */
+
+        .reviews {
+
+            background:
+                #09050f;
+        }
+
+        .reviews-grid {
+
+            display: grid;
+
+            gap: 20px;
+        }
+
+        .review {
+
+            padding: 28px;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #1a0d28,
+                    #100719
+                );
+
+            border:
+                1px solid
+                var(--border);
+        }
+
+        .stars {
+
+            color:
+                #c4b5fd;
+
+            font-size: 20px;
+
+            margin-bottom: 12px;
+        }
+
+        .review p {
+
+            color:
+                var(--muted);
+
+            font-style: italic;
+
+            margin-bottom: 15px;
+        }
+
+        .review strong {
+
+            color: white;
+        }
+
+
+        /* =====================================================
+           HORAIRES
+        ===================================================== */
+
+        .hours {
+
+            background:
+                #12091c;
+
+            text-align: center;
+        }
+
+        .hours-box {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            padding: 35px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(139,92,246,0.08);
+
+            border:
+                1px solid
+                var(--border);
+        }
+
+        .open {
+
+            display: inline-block;
+
+            margin-bottom: 15px;
+
+            padding:
+                8px 16px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(139,92,246,0.15);
+
+            color:
+                var(--violet-light);
+
+            font-weight: 800;
+        }
+
+        .hours-box p {
+
+            color:
+                var(--muted);
+        }
+
+
+        /* =====================================================
+           BANDEAU
+        ===================================================== */
+
+        .highlight {
+
+            padding: 70px 20px;
+
+            text-align: center;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #4c1d95,
+                    #7c3aed,
+                    #5b21b6
+                );
+        }
+
+        .highlight h2 {
+
+            font-size:
+                clamp(28px, 6vw, 45px);
+
+            margin-bottom: 12px;
+        }
+
+        .highlight p {
+
+            max-width: 650px;
+
+            margin:
+                0 auto 25px;
+
+            color:
+                #ede9fe;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact {
+
+            background:
+                #12091c;
+
+            text-align: center;
+        }
+
+        .contact-box {
+
+            max-width: 850px;
+
+            margin: auto;
+        }
+
+        .contact-box > p {
+
+            color:
+                var(--muted);
+
+            margin:
+                15px auto 30px;
+        }
+
+        .location {
+
+            margin-top: 30px;
+
+            color:
+                var(--violet-light);
+
+            font-weight: 800;
+        }
+
+        .location-card {
+
+            margin-top: 35px;
+
+            padding: 45px 25px;
+
+            border-radius: 25px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(139,92,246,0.16),
+                    rgba(46,16,101,0.45)
+                );
+
+            border:
+                1px solid
+                rgba(167,139,250,0.25);
+
+            box-shadow:
+                var(--shadow);
+        }
+
+        .location-icon {
+
+            font-size: 55px;
+
+            margin-bottom: 15px;
+        }
+
+        .location-card h3 {
+
+            font-size: 27px;
+
+            margin-bottom: 10px;
+        }
+
+        .location-card p {
+
+            color:
+                var(--muted);
+
+            max-width: 600px;
+
+            margin:
+                0 auto 25px;
+        }
+
+
+        /* =====================================================
+           WHATSAPP FLOTTANT
+        ===================================================== */
+
+        .whatsapp {
+
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            width: 62px;
+
+            height: 62px;
+
+            border-radius: 50%;
+
+            background:
+                #25D366;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-decoration: none;
+
+            font-size: 31px;
+
+            z-index: 999;
+
+            animation:
+                pulse 2s infinite;
+
+            box-shadow:
+                0 8px 30px
+                rgba(0,0,0,0.35);
+        }
+
+        .whatsapp:hover {
+
+            transform:
+                scale(1.08);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            padding:
+                32px 20px;
+
+            text-align: center;
+
+            background:
+                #060309;
+
+            color:
+                #80758d;
+        }
+
+        footer strong {
+
+            color: white;
+        }
+
+        .footer-location {
+
+            display: inline-block;
+
+            margin-top: 10px;
+
+            color:
+                var(--violet-light);
+
+            text-decoration: none;
+
+            font-weight: 800;
+
+            transition: 0.3s;
+        }
+
+        .footer-location:hover {
+
+            color: white;
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (min-width: 768px) {
+
+            nav {
+
+                padding:
+                    27px 55px;
+            }
+
+            .nav-links {
+
+                display: flex;
+            }
+
+            .about-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+                align-items: center;
+            }
+
+            .menu-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+            .gallery-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+            .reviews-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+        }
+
+
+        @media (max-width: 380px) {
+
+            .hero h1 {
+
+                font-size: 52px;
+            }
+
+            .btn {
+
+                width: 100%;
+            }
+
+            .hero p {
+
+                font-size: 15px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ===================================================== -->
+
+    <nav>
+
+        <div class="logo">
+            LE PRINCE <span>ALIA</span>
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#accueil">
+                Accueil
+            </a>
+
+            <a href="#restaurant">
+                Restaurant
+            </a>
+
+            <a href="#menu">
+                Menu
+            </a>
+
+            <a href="#galerie">
+                Galerie
+            </a>
+
+            <a href="#avis">
+                Avis
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <header
+        class="hero"
+        id="accueil"
+    >
+
+        <div class="hero-content">
+
+            <div class="tag">
+                Restaurant • Savalou
+            </div>
+
+            <h1>
+                Le Prince
+                <span>ALIA</span>
+            </h1>
+
+            <p>
+                Une expérience gourmande,
+                authentique et chaleureuse
+                au cœur de Savalou.
+            </p>
+
+            <div class="hero-location">
+
+                📍 En face de l'Hôtel F&F
+
+            </div>
+
+            <div class="buttons">
+
+                <a
+                    href="#menu"
+                    class="btn btn-primary"
+                >
+                    🍽️ Découvrir le menu
+                </a>
+
+                <a
+                    href="https://share.google/MdHYq1lvpblMTC0dW"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary"
+                >
+                    📍 Nous trouver
+                </a>
+
+                <a
+                    href="https://wa.me/2290140195420?text=Bonjour%20Le%20Prince%20ALIA%2C%20je%20souhaite%20avoir%20des%20informations."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary"
+                >
+                    💬 WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         PRESENTATION
+    ===================================================== -->
+
+    <section
+        class="about reveal"
+        id="restaurant"
+    >
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <small>
+                    Bienvenue
+                </small>
+
+                <h2>
+                    L'expérience
+                    <br>
+                    Le Prince ALIA
+                </h2>
+
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-image"></div>
+
+                <div class="about-text">
+
+                    <h3>
+                        Bienvenue chez
+                        <span>
+                            Le Prince ALIA
+                        </span>
+                    </h3>
+
+                    <p>
+                        Découvrez un espace où
+                        la bonne cuisine rencontre
+                        une ambiance agréable,
+                        chaleureuse et conviviale.
+                    </p>
+
+                    <p>
+                        Nous vous proposons des plats
+                        simples, généreux et savoureux,
+                        accompagnés de boissons
+                        rafraîchissantes.
+                    </p>
+
+                    <p>
+                        Que ce soit pour manger,
+                        prendre un café, retrouver
+                        vos proches ou simplement
+                        passer un bon moment,
+                        Le Prince ALIA vous accueille
+                        avec plaisir.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MENU
+    ===================================================== -->
+
+    <section
+        class="menu reveal"
+        id="menu"
+    >
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <small>
+                    À découvrir
+                </small>
+
+                <h2>
+                    Notre menu
+                </h2>
+
+            </div>
+
+            <div class="menu-grid">
+
+
+                <div class="menu-item">
+
+                    <div class="menu-icon">
+                        🍝
+                    </div>
+
+                    <h3>
+                        Spaghetti
+                    </h3>
+
+                    <p>
+                        Un plat généreux et savoureux,
+                        préparé avec soin.
+                    </p>
+
+                </div>
+
+
+                <div class="menu-item">
+
+                    <div class="menu-icon">
+                        🍳
+                    </div>
+
+                    <h3>
+                        Omelette
+                    </h3>
+
+                    <p>
+                        Une omelette préparée
+                        selon vos envies.
+                    </p>
+
+                </div>
+
+
+                <div class="menu-item">
+
+                    <div class="menu-icon">
+                        ☕
+                    </div>
+
+                    <h3>
+                        Café
+                    </h3>
+
+                    <p>
+                        Une pause café agréable
+                        à tout moment de la journée.
+                    </p>
+
+                </div>
+
+
+                <div class="menu-item">
+
+                    <div class="menu-icon">
+                        🍲
+                    </div>
+
+                    <h3>
+                        Couscous
+                    </h3>
+
+                    <p>
+                        Une spécialité généreuse
+                        et pleine de saveurs.
+                    </p>
+
+                </div>
+
+
+                <div class="menu-item">
+
+                    <div class="menu-icon">
+                        🍺
+                    </div>
+
+                    <h3>
+                        Bières
+                    </h3>
+
+                    <p>
+                        Une sélection de bières
+                        disponibles au restaurant.
+                    </p>
+
+                </div>
+
+
+                <div class="menu-item">
+
+                    <div class="menu-icon">
+                        🥤
+                    </div>
+
+                    <h3>
+                        Sucreries
+                    </h3>
+
+                    <p>
+                        Retrouvez vos boissons
+                        et sucreries préférées.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+            <div class="buttons"
+                 style="margin-top:35px;">
+
+                <a
+                    href="https://wa.me/2290140195420?text=Bonjour%20Le%20Prince%20ALIA%2C%20je%20voudrais%20conna%C3%AEtre%20les%20prix%20du%20menu."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                >
+                    💬 Demander les prix sur WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         GALERIE
+    ===================================================== -->
+
+    <section
+        class="gallery reveal"
+        id="galerie"
+    >
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <small>
+                    Notre univers
+                </small>
+
+                <h2>
+                    Galerie
+                </h2>
+
+            </div>
+
+            <div class="gallery-grid">
+
+                <div class="gallery-item">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=85"
+                        alt="Restaurant Le Prince ALIA à Savalou"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=85"
+                        alt="Plat servi au restaurant"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
+                        alt="Cuisine et plat savoureux"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=85"
+                        alt="Ambiance restaurant"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
+                        alt="Plat du restaurant"
+                        loading="lazy"
+                    >
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=85"
+                        alt="Repas au restaurant"
+                        loading="lazy"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         AVIS
+    ===================================================== -->
+
+    <section
+        class="reviews reveal"
+        id="avis"
+    >
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <small>
+                    Témoignages
+                </small>
+
+                <h2>
+                    Avis de nos clients
+                </h2>
+
+            </div>
+
+            <div class="reviews-grid">
+
+
+                <div class="review">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        « Un endroit agréable pour
+                        manger et passer un bon moment
+                        à Savalou. »
+                    </p>
+
+                    <strong>
+                        Client du Prince ALIA
+                    </strong>
+
+                </div>
+
+
+                <div class="review">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        « Une ambiance chaleureuse
+                        et des plats généreux.
+                        Je recommande. »
+                    </p>
+
+                    <strong>
+                        Client du Prince ALIA
+                    </strong>
+
+                </div>
+
+
+                <div class="review">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        « Très pratique comme
+                        emplacement, juste en face
+                        de l'Hôtel F&F. »
+                    </p>
+
+                    <strong>
+                        Client du Prince ALIA
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         HORAIRES
+    ===================================================== -->
+
+    <section
+        class="hours reveal"
+    >
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <small>
+                    Horaires
+                </small>
+
+                <h2>
+                    Nous sommes ouverts
+                </h2>
+
+            </div>
+
+            <div class="hours-box">
+
+                <div class="open">
+                    ● Ouvert 7 jours sur 7
+                </div>
+
+                <p>
+                    Le Prince ALIA vous accueille
+                    toute la semaine.
+                </p>
+
+                <p style="margin-top:10px;">
+                    Pour connaître les horaires
+                    précis du jour, contactez-nous
+                    directement.
+                </p>
+
+                <div class="buttons"
+                     style="margin-top:25px;">
+
+                    <a
+                        href="tel:+2290140195420"
+                        class="btn btn-primary"
+                    >
+                        📞 +229 01 40 19 54 20
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BANDEAU
+    ===================================================== -->
+
+    <section class="highlight">
+
+        <div class="container">
+
+            <h2>
+                Le goût commence ici.
+            </h2>
+
+            <p>
+                Venez découvrir l'univers
+                du Prince ALIA et profitez
+                d'un moment gourmand
+                à Savalou.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="https://share.google/MdHYq1lvpblMTC0dW"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary"
+                >
+                    📍 Nous trouver
+                </a>
+
+                <a
+                    href="https://wa.me/2290140195420?text=Bonjour%20Le%20Prince%20ALIA%2C%20je%20souhaite%20venir%20au%20restaurant."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary"
+                >
+                    💬 Nous écrire sur WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT & LOCALISATION
+    ===================================================== -->
+
+    <section
+        class="contact reveal"
+        id="contact"
+    >
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <div class="section-title">
+
+                    <small>
+                        Contact & localisation
+                    </small>
+
+                    <h2>
+                        Venez nous découvrir
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Le Prince ALIA se trouve à
+                    <strong>
+                        Savalou, en face de l'Hôtel F&F.
+                    </strong>
+                </p>
+
+
+                <div class="buttons">
+
+                    <a
+                        href="tel:+2290140195420"
+                        class="btn btn-primary"
+                    >
+                        📞 Appeler
+                    </a>
+
+                    <a
+                        href="https://wa.me/2290140195420"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-secondary"
+                    >
+                        💬 WhatsApp
+                    </a>
+
+                </div>
+
+
+                <div class="location">
+
+                    📍 Savalou, Bénin
+                    <br>
+                    En face de l'Hôtel F&F
+
+                </div>
+
+
+                <!-- =================================================
+                     LOCALISATION GOOGLE MAPS
+                ================================================= -->
+
+                <div class="location-card">
+
+                    <div class="location-icon">
+                        📍
+                    </div>
+
+                    <h3>
+                        Retrouvez-nous facilement
+                    </h3>
+
+                    <p>
+                        Le Prince ALIA à Savalou,
+                        juste en face de l'Hôtel F&F.
+                        Ouvrez notre localisation pour
+                        obtenir directement l'itinéraire.
+                    </p>
+
+                    <a
+                        href="https://share.google/MdHYq1lvpblMTC0dW"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-primary"
+                    >
+                        📍 Ouvrir notre localisation
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <p>
+
+            © 2026
+
+            <strong>
+                Le Prince ALIA
+            </strong>.
+
+            Tous droits réservés.
+
+        </p>
+
+        <a
+            href="https://share.google/MdHYq1lvpblMTC0dW"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-location"
+        >
+            📍 Savalou • Bénin • En face de l'Hôtel F&F
+            <br>
+            Voir la localisation
+        </a>
+
+    </footer>
+
+
+    <!-- =====================================================
+         WHATSAPP FLOTTANT
+    ===================================================== -->
+
+    <a
+        class="whatsapp"
+        href="https://wa.me/2290140195420?text=Bonjour%20Le%20Prince%20ALIA%2C%20je%20viens%20de%20visiter%20votre%20site."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contacter Le Prince ALIA sur WhatsApp"
+        title="WhatsApp Le Prince ALIA"
+    >
+        💬
+    </a>
+
+
+    <!-- =====================================================
+         JAVASCRIPT : ANIMATIONS AU SCROLL
+    ===================================================== -->
+
+    <script>
+
+        const elements =
+            document.querySelectorAll(".reveal");
+
+        const observer =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(
+                        (entry) => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "visible"
+                                );
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+        elements.forEach(
+            (element) => {
+
+                observer.observe(
+                    element
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+</html>
